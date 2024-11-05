@@ -42,8 +42,12 @@ public class Armour extends Equippable {
     public Armour()
     {
         super();
-
-        // Complete the remainder of this method
+        this.durability = 0;
+        this.defense = 0;
+        this.material = "";
+        this.modifier = "";
+        this.modifierLevel = 0;
+        this.element = "";
     }
 
     /**
@@ -70,18 +74,19 @@ public class Armour extends Equippable {
     public int requiredNumberOfValues()
     {
         // Replace this with the correct value
-        return -1;
+        return 7;
     }
 
     @Override
     public void fromTokens(String[] tokens)
     {
         this.setName(tokens[0]);
-
         this.setMaterial(tokens[1]);
         this.setDurability(Integer.parseInt(tokens[2]));
-
-        // Complete the remainder of this method
+        this.setDefense(Integer.parseInt(tokens[3]));
+        this.setModifier(tokens[4]);
+        this.setModifierLevel(Integer.parseInt(tokens[5]));
+        this.setElement(tokens[6]);
     }
 
     /**
@@ -90,12 +95,7 @@ public class Armour extends Equippable {
     @Override
     public Item clone()
     {
-        Armour cpy = new Armour();
-
-        // Complete the remainder of this method
-
-
-        return cpy;
+        return new Armour(this);
     }
 
     /**
@@ -109,12 +109,16 @@ public class Armour extends Equippable {
     {
         if (!(rhs instanceof Armour)) {
             return false;
+        } else if (this == rhs) {
+            return true;
         }
 
         Armour rhsItem = (Armour) rhs;
 
-        // Complete the remainder of this method
-        return false;
+        return this.name.equals(rhsItem.getName()) &&
+               this.material.equals(rhsItem.getMaterial()) &&
+               this.modifier.equals(rhsItem.getModifier()) &&
+               this.element.equals(rhsItem.getElement());
     }
 
     /**
@@ -142,7 +146,8 @@ public class Armour extends Equippable {
     @Override
     public String toString()
     {
-        return "Use FMT_STR, accessors and String.format...";
+        // return "Use FMT_STR, accessors and String.format...";
+        return String.format(FMT_STR, this.getName(), this.getDurability(), this.getDefense(), this.getMaterial(), this.getModifier(), this.getModifierLevel, this.getElement());
     }
 }
 
