@@ -147,7 +147,7 @@ public class Armour extends Equippable {
     public String toString()
     {
         // return "Use FMT_STR, accessors and String.format...";
-        return String.format(FMT_STR, this.getName(), this.getDurability(), this.getDefense(), this.getMaterial(), this.getModifier(), this.getModifierLevel, this.getElement());
+        return String.format(FMT_STR, this.getName(), this.getDurability(), this.getDefense(), this.getMaterial(), this.getModifier(), this.getModifierLevel(), this.getElement());
     }
 }
 
