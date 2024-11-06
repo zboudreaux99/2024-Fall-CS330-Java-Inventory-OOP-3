@@ -42,12 +42,12 @@ public class Armour extends Equippable {
     public Armour()
     {
         super();
-        this.durability = 0;
-        this.defense = 0;
-        this.material = "";
-        this.modifier = "";
-        this.modifierLevel = 0;
-        this.element = "";
+        this.setDurability(0);
+        this.setDefense(0);
+        this.setMaterial("");
+        this.setModifier("");
+        this.setModifierLevel(0);
+        this.setElement("");
     }
 
     /**
@@ -95,7 +95,14 @@ public class Armour extends Equippable {
     @Override
     public Item clone()
     {
-        return new Armour(this);
+        Armour clone = new Armour();
+        clone.setName(this.getName());
+        clone.setMaterial(this.getMaterial());
+        clone.setDurability(this.getDurability());
+        clone.setDefense(this.getDefense());
+        clone.setModifier(this.getModifier());
+        clone.setModifierLevel(this.getModifierLevel());
+        clone.setElement(this.getElement());
     }
 
     /**
@@ -115,10 +122,12 @@ public class Armour extends Equippable {
 
         Armour rhsItem = (Armour) rhs;
 
-        return this.name.equals(rhsItem.getName()) &&
-               this.material.equals(rhsItem.getMaterial()) &&
-               this.modifier.equals(rhsItem.getModifier()) &&
-               this.element.equals(rhsItem.getElement());
+        return this.getName().equals(rhsItem.getName()) &&
+               this.getMaterial().equals(rhsItem.getMaterial()) &&
+               this.getModifier().equals(rhsItem.getModifier()) &&
+               this.getModifierLevel().equals(rhsItem.getModifierLevel()) &&
+               this.getElement().equals(rhsItem.getElement()) &&
+               this.getDefense().equals(rhsItem.getDefense());
     }
 
     /**
