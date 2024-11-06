@@ -152,7 +152,7 @@ public class Tool extends Equippable {
            this.getMaterial(),
            this.getModifier(),
            this.getModifierLevel()
-        ););
+        ));
         return String.format(
            FMT_STR,
            this.getName(),
