@@ -63,8 +63,7 @@ public class TestTool
     public void testClone()
     {
         Tool copy = (Tool) leftHandedHammer.clone();
-        System.out.println(copy.isStackable());
-        System.out.println(copy.toString());
+        
         // Checks
         assertThat(copy.getName(), equalTo("Left-Handed Hammer"));
         assertFalse(copy.isStackable());

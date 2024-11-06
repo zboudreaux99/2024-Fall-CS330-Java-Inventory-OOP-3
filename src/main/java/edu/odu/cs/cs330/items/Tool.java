@@ -118,36 +118,6 @@ public class Tool extends Equippable {
 
         Tool rhsItem = (Tool) rhs;
 
-        if (!this.getName().equals(rhsItem.getName())) {
-            System.out.println("Failed on name");
-            System.out.println("This name = " + this.getName());
-            System.out.println("RHS name = " + rhsItem.getName());
-        }
-
-        if (!(this.getSpeed() == rhsItem.getSpeed())) {
-            System.out.println("Failed on speed");
-            System.out.println("This speed = " + this.getSpeed());
-            System.out.println("RHS speed = " + rhsItem.getSpeed());
-        }
-
-        if (!this.getMaterial().equals(rhsItem.getMaterial())) {
-            System.out.println("Failed on material");
-            System.out.println("This material = " + this.getMaterial());
-            System.out.println("RHS material = " + rhsItem.getMaterial());
-        }
-
-        if (!this.getModifier().equals(rhsItem.getModifier())) {
-            System.out.println("Failed on Modifier");
-            System.out.println("This Modifier = " + this.getModifier());
-            System.out.println("RHS Modifier = " + rhsItem.getModifier());
-        }
-
-        if (!(this.getModifierLevel() == rhsItem.getModifierLevel())) {
-            System.out.println("Failed on ModifierLevel");
-            System.out.println("This ModifierLevel = " + this.getModifierLevel());
-            System.out.println("RHS ModifierLevel = " + rhsItem.getModifierLevel());
-        }
-
         return this.getName().equals(rhsItem.getName()) &&
                this.getSpeed() == rhsItem.getSpeed() &&
                this.getMaterial().equals(rhsItem.getMaterial()) &&
@@ -169,13 +139,6 @@ public class Tool extends Equippable {
             this.getModifierLevel(),
             this.getSpeed()
         );
-        // int hash = this.getName().hashCode();
-        // hash += 2 * this.getMaterial().hashCode();
-        // hash += 4 * this.getModifier().hashCode();
-        // hash += 8 * this.getModifierLevel();
-        // hash += 32 * this.getSpeed();
-
-        // return hash;
     }
 
     /**
