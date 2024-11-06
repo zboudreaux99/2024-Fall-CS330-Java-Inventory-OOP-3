@@ -112,6 +112,8 @@ public class TestStorage
         assertThat(inv.percentFilled(), equalTo(75));
 
         String invAsStr = inv.toString();
+        System.out.println(invAsStr);
+        System.out.println(itemsAsStrings);
         assertThat(invAsStr, stringContainsInOrder(Arrays.asList("75%", "of", "4", "slots")));
         assertThat(invAsStr, stringContainsInOrder(itemsAsStrings));
     }
