@@ -78,8 +78,9 @@ public class Tool extends Equippable {
         this.setName(tokens[0]);
         this.setMaterial(tokens[1]);
         this.setDurability(Integer.parseInt(tokens[2]));
-        this.setModifier(tokens[3]);
-        this.setModifierLevel(Integer.parseInt(tokens[4]));
+        this.setSpeed(Integer.parseInt(tokens[3]));
+        this.setModifier(tokens[4]);
+        this.setModifierLevel(Integer.parseInt(tokens[5]));
     }
 
     /**
