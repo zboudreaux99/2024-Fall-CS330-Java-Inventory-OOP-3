@@ -124,7 +124,7 @@ public class Tool extends Equippable {
             System.out.println("RHS name = " + rhsItem.getName());
         }
 
-        if (!this.getSpeed().equals(rhsItem.getSpeed())) {
+        if (!(this.getSpeed() == rhsItem.getSpeed())) {
             System.out.println("Failed on speed");
             System.out.println("This speed = " + this.getSpeed());
             System.out.println("RHS speed = " + rhsItem.getSpeed());
@@ -142,7 +142,7 @@ public class Tool extends Equippable {
             System.out.println("RHS Modifier = " + rhsItem.getModifier());
         }
 
-        if (!this.getModifierLevel().equals(rhsItem.getModifierLevel())) {
+        if (!(this.getModifierLevel() == rhsItem.getModifierLevel())) {
             System.out.println("Failed on ModifierLevel");
             System.out.println("This ModifierLevel = " + this.getModifierLevel());
             System.out.println("RHS ModifierLevel = " + rhsItem.getModifierLevel());
