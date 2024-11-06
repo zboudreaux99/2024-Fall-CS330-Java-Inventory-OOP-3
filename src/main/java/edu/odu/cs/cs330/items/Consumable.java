@@ -43,9 +43,9 @@ public class Consumable extends Item {
      */
     public Consumable()
     {
-        super("[Placeholder]");
-
-        // Complete the remainder of this method
+        super("");
+        this.setEffect("");
+        this.setNumberOfUses(0);
     }
 
     /**
@@ -98,13 +98,15 @@ public class Consumable extends Item {
     public int requiredNumberOfValues()
     {
         // Replace this with the correct value
-        return -1;
+        return 3;
     }
 
     @Override
     public void fromTokens(String[] tokens)
     {
-
+        this.setName(tokens[0]);
+        this.setEffect(tokens[1]);
+        this.setNumberOfUses(Integer.parseInt(tokens[2]));
     }
 
     /**
@@ -113,8 +115,11 @@ public class Consumable extends Item {
     @Override
     public Item clone()
     {
-        // Replace the next line
-        return null;
+        Consumable clone = new Consumable();
+        clone.setName(this.getName());
+        clone.setEffect(this.getEffect());
+        clone.setNumberOfUses(this.getNumberOfUses());
+        return clone;
     }
 
     /**
@@ -127,10 +132,14 @@ public class Consumable extends Item {
     {
         if (!(rhs instanceof Consumable)) {
             return false;
+        } else if (this == rhs) {
+            return true;
         }
 
-        // Replace the "return false" with your logic
-        return false;
+        Consumable rhsItem = (Consumable) rhs;
+
+        return this.getName().equals(rhsItem.getName()) &&
+               this.getEffect().equals(rhsItem.getEffect());
     }
 
     /**
@@ -142,7 +151,10 @@ public class Consumable extends Item {
     @Override
     public int hashCode()
     {
-        return -1;
+        return Objects.hash(
+            this.getName(),
+            this.getEffect()
+        );
     }
 
     /**
@@ -151,6 +163,6 @@ public class Consumable extends Item {
     @Override
     public String toString()
     {
-        return "Make sure to check Armour.toString for hints.";
+        return String.format(FMT_STR, this.getName(), this.getEffect(), this.getNumberOfUses());
     }
 }
