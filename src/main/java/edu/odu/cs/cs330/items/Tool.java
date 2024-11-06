@@ -109,12 +109,44 @@ public class Tool extends Equippable {
     public boolean equals(Object rhs)
     {
         if (!(rhs instanceof Tool)) {
+            System.out.println("failed for instanceof");
             return false;
         } else if (this == rhs) {
+            System.out.println("true for this == rhs");
             return true;
         }
 
         Tool rhsItem = (Tool) rhs;
+
+        if (!this.getName().equals(rhsItem.getName())) {
+            System.out.println("Failed on name");
+            System.out.println("This name = " + this.getName());
+            System.out.printLN("RHS name = " + rhsItem.getName());
+        }
+
+        if (!this.getSpeed().equals(rhsItem.getSpeed())) {
+            System.out.println("Failed on speed");
+            System.out.println("This speed = " + this.getSpeed());
+            System.out.printLN("RHS speed = " + rhsItem.getSpeed());
+        }
+
+        if (!this.getMaterial().equals(rhsItem.getMaterial())) {
+            System.out.println("Failed on material");
+            System.out.println("This material = " + this.getMaterial());
+            System.out.printLN("RHS material = " + rhsItem.getMaterial());
+        }
+
+        if (!this.getModifier().equals(rhsItem.getModifier())) {
+            System.out.println("Failed on Modifier");
+            System.out.println("This Modifier = " + this.getModifier());
+            System.out.println("RHS Modifier = " + rhsItem.getModifier());
+        }
+
+        if (!this.getModifierLevel().equals(rhsItem.getModifierLevel())) {
+            System.out.println("Failed on ModifierLevel");
+            System.out.println("This ModifierLevel = " + this.getModifierLevel());
+            System.out.printLN("RHS ModifierLevel = " + rhsItem.getModifierLevel());
+        }
 
         return this.getName().equals(rhsItem.getName()) &&
                this.getSpeed() == rhsItem.getSpeed() &&
