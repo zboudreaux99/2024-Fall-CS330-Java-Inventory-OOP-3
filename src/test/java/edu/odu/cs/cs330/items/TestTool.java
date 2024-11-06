@@ -73,6 +73,7 @@ public class TestTool
         assertThat(copy.getModifier(), equalTo("WorkAcceleration"));
         assertThat(copy.getModifierLevel(), equalTo(999_999));
 
+        System.out.println(copy.toString());
         // I should really check display() and/or operator<< here. However, I will
         // do that in a separate `testDisplay` function
     }
