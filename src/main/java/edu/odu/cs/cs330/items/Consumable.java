@@ -151,10 +151,7 @@ public class Consumable extends Item {
     @Override
     public int hashCode()
     {
-        return Objects.hash(
-            this.getName(),
-            this.getEffect()
-        );
+        return this.getName().hashCode() + this.getEffect().hashCode();
     }
 
     /**
