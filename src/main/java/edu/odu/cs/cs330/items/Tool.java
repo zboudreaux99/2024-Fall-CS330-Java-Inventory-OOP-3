@@ -42,8 +42,7 @@ public class Tool extends Equippable {
     public Tool()
     {
         super();
-
-        this.speed = 0;
+        this.setSpeed(0);
     }
 
     /**
@@ -90,13 +89,13 @@ public class Tool extends Equippable {
     @Override
     public Item clone()
     {
-        Tool clone = new Tool();
-        clone.setName(this.getName());
-        clone.setMaterial(this.getMaterial());
-        clone.setDurability(this.getDurability());
-        clone.setModifier(this.getModifier());
-        clone.setModifierLevel(this.getModifierLevel());
-        return clone;
+        Tool cpy = new Tool();
+        cpy.setName(this.getName());
+        cpy.setMaterial(this.getMaterial());
+        cpy.setDurability(this.getDurability());
+        cpy.setModifier(this.getModifier());
+        cpy.setModifierLevel(this.getModifierLevel());
+        return cpy;
     }
 
     /**
