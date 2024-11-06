@@ -124,7 +124,7 @@ public class TestTool
         Tool imitation = (Tool) leftHandedHammer.clone();
 
         imitation.setDurability(12);
-        assertThat(leftHandedHammer, equalTo(imitation));
+        assertThat(leftHandedHammer, is(equalTo(imitation)));
 
         imitation = (Tool) leftHandedHammer.clone();
         imitation.setSpeed(1234);
