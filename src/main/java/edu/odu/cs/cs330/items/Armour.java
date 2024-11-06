@@ -103,6 +103,8 @@ public class Armour extends Equippable {
         clone.setModifier(this.getModifier());
         clone.setModifierLevel(this.getModifierLevel());
         clone.setElement(this.getElement());
+
+        return clone;
     }
 
     /**
