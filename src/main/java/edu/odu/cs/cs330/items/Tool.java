@@ -90,10 +90,10 @@ public class Tool extends Equippable {
     {
         Tool clone = new Tool();
         clone.setName(this.getName());
-        clone.setMaterial(this.setMaterial());
-        clone.setDurability(this.setDurability());
-        clone.setModifier(this.setModifier());
-        clone.setModifierLevel(this.setModifierLevel());
+        clone.setMaterial(this.getMaterial());
+        clone.setDurability(this.getDurability());
+        clone.setModifier(this.getModifier());
+        clone.setModifierLevel(this.getModifierLevel());
         return clone;
     }
 
