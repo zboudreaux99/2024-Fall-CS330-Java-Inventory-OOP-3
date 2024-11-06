@@ -63,7 +63,7 @@ public class TestTool
     public void testClone()
     {
         Tool copy = (Tool) leftHandedHammer.clone();
-
+        System.out.println(copy.toString());
         // Checks
         assertThat(copy.getName(), equalTo("Left-Handed Hammer"));
         assertFalse(copy.isStackable());
@@ -72,8 +72,6 @@ public class TestTool
         assertThat(copy.getMaterial(), equalTo("Titanium"));
         assertThat(copy.getModifier(), equalTo("WorkAcceleration"));
         assertThat(copy.getModifierLevel(), equalTo(999_999));
-
-        System.out.println(copy.toString());
         // I should really check display() and/or operator<< here. However, I will
         // do that in a separate `testDisplay` function
     }
